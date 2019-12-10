@@ -1,0 +1,241 @@
+<!-- Home Page -->
+<!doctype html>
+<html lang="en">
+  <head>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="home.html">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+          <a class="nav-link" href="homepage.html">Home Screen</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="closet.html">Your Closet</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="availableloads.html">Available Loads</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="weather.html">Weather</a>
+          </li>
+          <li class="nav-item active">
+          <a class="nav-link" href="howto.html">How To</a>
+          </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+          <form action="index.html">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Logout</button>
+          </form>
+        </div>
+        </div>
+      </nav>
+
+      <div class="limiter">
+        <div class="container-login100" style="background-image: url('images/laun.jpg');">
+          <div class="wrap-login100">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Weather Information</title>
+    <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<style>
+		#thermometer_inner { width: 95%; height: 20%; margin:2.5%; background: red; position:absolute; bottom:0;}
+		#thermometer_outer {height:400px; position:relative;}
+		#temp_today { color:white; text-align:center; position:relative; top:50%; }
+	</style>
+  </head>
+  <body>
+  	<div class="container">
+		<br>
+		<h1 style="text-align:center">Weather Forecast</h1>
+		<hr>
+		<div class="row">
+			<div class="col-4">
+				<div class="card" >
+					<div id="thermometer_outer">
+						<div id="thermometer_inner"><p id="temp_today" class="h3"> 0 F</p></div>
+					</div>
+					<div class="card-body">
+					    <h5 class="text-center">Thermometer</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card" style="height:100%;">
+					<div class="my-auto">
+						<!-- source for images: https://www.iconfinder.com/iconsets/weather-line-19 -->
+						<img id="image_today" class="img-fluid" src="img/rain.png" alt="Today's Weather Icon">
+						<p id="icon_today" class="h3" style="text-align:center">Icon</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card " style="height:100%;">
+					<div class="my-auto">
+						<p class="h3" style="padding-left:15px;">Precipitation: <span id="precip_today">10%</span><br>
+					    Humidity: <span id="humidity_today">80%</span><br>
+					    Wind Speed: <span id="wind_today">5</span> mph<br>
+					    Summary: <span id="summary_today">Summary Info</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<h2 class="h1" style="text-align:center;">6 Day Forecast</h2>
+		<hr>
+		<div class="row" id="6_day_forecast">
+            <div class="col-2" >
+                <div class="card">
+                    <img class="card-img-top" id = "1"src="img/cloudy.png" alt="Sunday">
+                    <p id="icon_today" class="h3" style="text-align:center">Sunday</p>
+                    <div class="card-body">
+                    <h5 class="card-title"><!-- List Day of the Week Here -->
+                    <p class="card-text" id = "h1">High:<!--List Temperature High -->
+                                         Low: <!-- List Temperature Low -->
+                </div>
+            </div>
+        </div>
+        <div class="col-2" >
+            <div class="card">
+                <img class="card-img-top" id="2" src="img/clear-day.png" alt="Monday">
+                <p id="icon_today" class="h3" style="text-align:center">Monday</p>
+                <div class="card-body">
+                <h5 class="card-title"><!-- List Day of the Week Here -->
+                <p class="card-text" id = "h2">High:<!--List Temperature High -->
+                                         Low: <!-- List Temperature Low -->
+            </div>
+        </div>
+    </div>
+    <div class="col-2" >
+        <div class="card">
+            <img class="card-img-top" id = "3" src="img/clear-day.png" alt="Tuesday">
+            <p id="icon_today" class="h3" style="text-align:center">Tuesday</p>
+            <div class="card-body">
+            <h5 class="card-title"><!-- List Day of the Week Here -->
+            <p class="card-text" id = "h3">High:<!--List Temperature High -->
+                                     Low: <!-- List Temperature Low -->
+        </div>
+    </div>
+</div>
+<div class="col-2" id="3">
+    <div class="card">
+        <img class="card-img-top" id = "4"src="img/clear-day.png" alt="Wednesday">
+        <p id="icon_today" class="h3" style="text-align:center">Wednesday</p>
+        <div class="card-body">
+        <h5 class="card-title"><!-- List Day of the Week Here -->
+        <p class="card-text" id = "h4">High:<!--List Temperature High -->
+                                 Low: <!-- List Temperature Low -->
+    </div>
+</div>
+</div>
+<div class="col-2" id="4">
+    <div class="card">
+        <img class="card-img-top" id = "5"src="img/clear-day.png" alt="Thursday">
+        <p id="icon_today" class="h3" style="text-align:center">Thursday</p>
+        <div class="card-body">
+        <h5 class="card-title"><!-- List Day of the Week Here -->
+        <p class="card-text" id = "h5">High:<!--List Temperature High -->
+                                 Low: <!-- List Temperature Low -->
+    </div>
+</div>
+</div>
+<div class="col-2" id="5">
+    <div class="card">
+        <img class="card-img-top" id = "6"src="img/clear-day.png" alt="Friday">
+        <p id="icon_today" class="h3" style="text-align:center">Friday</p>
+        <div class="card-body">
+        <h5 class="card-title"><!-- List Day of the Week Here -->
+        <p class="card-text" id = "h6">High:<!--List Temperature High -->
+                                 Low: <!-- List Temperature Low -->
+    </div>
+</div>
+</div>
+	</div>
+		<br>
+	</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script>
+    $(document).ready(function() {
+    	var url ='https://api.darksky.net/forecast/d81c3cbe01e4d04d39cd831fda3b77dd/37.8267,-122.4233'; //Place your DarkSky API Call Here
+    	$.ajax({url:url, dataType:"jsonp"}).then(function(data) {
+    		console.log(data);//Review all of the data returned
+    		console.log("Current Temp: " + data.currently.apparentTemperature);//View Today's Temp
+    		console.log("Tomorrow's High: " + data.daily.data[1].apparentTemperatureHigh);//View Tomorrow's High
+            console.log(data.daily.icon);
+            var img = "img/";
+            var png = ".png";
+            var weather = img.concat(data.daily.icon, png);
+            $("#image_today").attr('src', weather);
+            $("#icon_today").text(data.daily.icon);
+            $("#temp_today").text(data.currently.apparentTemperature);
+            var temp = "";
+            temp = temp.concat(data.currently.apparentTemperature)
+            var percent = temp.concat("%");
+            console.log(percent);
+            document.getElementById('thermometer_inner').style.height= percent;
+            $("#precip_today").text(data.currently.precipProbability);
+            //console.log(data.currently.humidity);
+            $("#humidity_today").text(data.currently.humidity);
+            $("#wind_today").text(data.currently.windSpeed);
+            $("#summary_today").text(data.currently.summary);
+            var img = "img/";
+            var png = ".png";
+            var weather = img.concat(data.daily.data[0].icon, png);
+            console.log(weather);
+            $("#1").attr('src', weather);
+            var temp = "High:" + data.daily.data[0].apparentTemperatureHigh + " Low:" + data.daily.data[0].apparentTemperatureLow;
+            $("#h1").text(temp);
+            var img = "img/";
+            var png = ".png";
+            var weather = img.concat(data.daily.data[1].icon, png);
+            console.log(weather);
+            $("#2").attr('src', weather);
+            var temp = "High:" + data.daily.data[1].apparentTemperatureHigh + " Low:" + data.daily.data[1].apparentTemperatureLow;
+            $("#h2").text(temp);
+            var img = "img/";
+            var png = ".png";
+            var weather = img.concat(data.daily.data[2].icon, png);
+            console.log(weather);
+            $("#3").attr('src', weather);
+            var temp = "High:" + data.daily.data[2].apparentTemperatureHigh + " Low:" + data.daily.data[2].apparentTemperatureLow;
+            $("#h3").text(temp);
+            var img = "img/";
+            var png = ".png";
+            var weather = img.concat(data.daily.data[3].icon, png);
+            console.log(weather);
+            $("#4").attr('src', weather);
+            var temp = "High:" + data.daily.data[3].apparentTemperatureHigh + " Low:" + data.daily.data[3].apparentTemperatureLow;
+            $("#h4").text(temp);
+            var img = "img/";
+            var png = ".png";
+            var weather = img.concat(data.daily.data[4].icon, png);
+            console.log(weather);
+            $("#5").attr('src', weather);
+            var temp = "High:" + data.daily.data[4].apparentTemperatureHigh + " Low:" + data.daily.data[4].apparentTemperatureLow;
+            $("#h5").text(temp);
+            var img = "img/";
+            var png = ".png";
+            var weather = img.concat(data.daily.data[5].icon, png);
+            console.log(weather);
+            $("#6").attr('src', weather);
+            var temp = "High:" + data.daily.data[5].apparentTemperatureHigh + " Low:" + data.daily.data[5].apparentTemperatureLow;
+            $("#h6").text(temp);
+
+            var unix_time = data.currently.time;//Retrieve the current timestamp
+    		var javascript_time = new Date(unix_time * 1000);//Convert the unix time stamp to javascript
+    		console.log(javascript_time);
+    		console.log(javascript_time.getDay());
+    	})
+    })
+
+
+ 	</script>
+</body>
+</html>

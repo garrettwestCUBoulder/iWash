@@ -1,0 +1,140 @@
+doctype html
+head
+  title Add Item
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // ===============================================================================================
+  link(rel='icon' type='image/png' href='images/icons/favicon.ico')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='vendor/bootstrap/css/bootstrap.min.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='fonts/iconic/css/material-design-iconic-font.min.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='vendor/animate/animate.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='vendor/css-hamburgers/hamburgers.min.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='vendor/animsition/css/animsition.min.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='vendor/select2/select2.min.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='vendor/daterangepicker/daterangepicker.css')
+  // ===============================================================================================
+  link(rel='stylesheet' type='text/css' href='css/util.css')
+  link(rel='stylesheet' type='text/css' href='css/main.css')
+  // ===============================================================================================
+  style.
+    a:link {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+    }
+    a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+    }
+    a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+    }
+    a:active {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+    }
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  a.navbar-brand(href='home.html')
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarText' aria-controls='navbarText' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  navbartext.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item
+        a.nav-link(href='homepage.html') Home Screen
+      li.nav-item
+        a.nav-link(href='closet.html') Your Closet
+      li.nav-item
+        a.nav-link(href='available_loads') Available Loads
+      li.nav-item
+        a.nav-link(href='weather.html') Weather
+      li.nav-item
+        a.nav-link(href='howto.html') How To
+    .form-inline.my-2.my-lg-0
+      form(action='/')
+        button.btn.btn-outline-light.my-2.my-sm-0(type='submit') Logout
+.limiter
+  .container-login100(style="background-image: url('images/laun.jpg');")
+    .container
+      form(action='/add_clothes' method='post')
+        br
+        br
+        #student_status.row
+          label.col-form-label.col-sm-2.pt-0
+            b Article of Clothing
+          .col-sm-10
+            .form-check
+              input#undergrad.form-check-input(onclick='' type='radio' name='article' value='shirt')
+              label.form-check-label(for='undergrad') Shirt
+            .form-check
+              input#graduate.form-check-input(onclick='' type='radio' name='article' value='pants')
+              label.form-check-label(for='graduate') Pants
+            .form-check
+              input#undergrad.form-check-input(onclick='' type='radio' name='article' value='socks')
+              label.form-check-label(for='undergrad') Socks
+            .form-check
+              input#graduate.form-check-input(onclick='' type='radio' name='article' value='underwear')
+              label.form-check-label(for='graduate') Underwear
+        br
+        #student_status.row
+          label.col-form-label.col-sm-2.pt-0
+            b Season
+          .col-sm-10
+            .form-check
+              input#undergrad.form-check-input(onclick='' type='checkbox' name='season' value='summer')
+              label.form-check-label(for='undergrad') Summer
+            .form-check
+              input#graduate.form-check-input(onclick='' type='checkbox' name='season' value='fall')
+              label.form-check-label(for='graduate') Fall
+            .form-check
+              input#undergrad.form-check-input(onclick='' type='checkbox' name='season' value='winter')
+              label.form-check-label(for='undergrad') Winter
+            .form-check
+              input#graduate.form-check-input(onclick='' type='checkbox' name='season' value='spring')
+              label.form-check-label(for='graduate') Spring
+        br
+        .form-group.row
+          label.col-sm-2.col-form-label(for='brand')
+            b Clothing Brand
+          .col-sm-10
+            input#brand.form-control(type='brand' name='brand' placeholder='Clothing Brand')
+        .form-group.row
+          label.col-sm-2.col-form-label(for='color')
+            b Color
+          .col-sm-10
+            input#color.form-control(name='color' placeholder='Color')
+        .form-group.row
+          label.col-sm-2.col-form-label(for='fullName')
+            b Description
+          .col-sm-10
+            input#description.form-control(type='text' name='description' placeholder='Description')
+        .form-group.row
+          label.col-sm-2.col-form-label(for='materials')
+            b Material
+          .col-sm-10
+            input#materials.form-control(type='materials' name='materials' placeholder='Material')
+        br
+        .form-group.row
+          label.col-sm-2.col-form-label(for='image')
+            b Image
+          .col-sm-10
+            input#image(type='file' name='image')
+        br
+        input.btn.btn-primary.btn-block(type='submit' value='Next')
+      br
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js' integrity='sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut' crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js' integrity='sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k' crossorigin='anonymous')
+    script(src='../resources/js/my_scripts.js')
