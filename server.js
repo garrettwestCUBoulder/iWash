@@ -192,7 +192,7 @@ app.get('/view_closet', function(req, res) {
 	connection.query(get_clothes, (err, result) => {
 		//redirect to home page on error
 		if (err) {
-			res.redirect('closet');
+			res.redirect('closet.html');
 		}
 		res.render('view_closet', {
 			//pass query results through reslt array
@@ -310,7 +310,7 @@ app.post('/available_loads', function(req, res) {
 //loads delete_clothes page
 app.get('/delete_clothes', function(req, res) {
 	//query to load all clothes
-	var get_clothes = "SELECT * FROM item;";
+	var get_clothes = "SELECT * FROM item WHERE closet_id = " + current_closet_id + ";";
 
 	//execute query
 	connection.query(get_clothes, (err, result) => {
@@ -332,7 +332,7 @@ app.post('/delete_clothes', function(req, res) {
 	var delete_selections = req.body.delete;
 
 	//query to delete all user selected items
-	var delete_clothes = "SET FOREIGN_KEY_CHECKS=0; DELETE FROM item WHERE ";
+	var delete_clothes = "SET FOREIGN_KEY_CHECKS=0; DELETE FROM item WHERE closet_id = " + current_closet_id + "";
 	var i;
 
 	if (delete_selections != undefined) {
@@ -347,13 +347,13 @@ app.post('/delete_clothes', function(req, res) {
 				var where = " OR item_id = '" + delete_selections[i] + "'";
 			}
 			else {
-				var where = "item_id = '" + delete_selections[i] + "'";
+				var where = " AND item_id = '" + delete_selections[i] + "'";
 			}
 			delete_clothes += where;
 			delete_clothes += " ";
 		}
 		delete_clothes += "; SET FOREIGN_KEY_CHECKS=1;";
-
+		console.log(delete_clothes);
 		//only execute query if user has made at least one selection
 		connection.query(delete_clothes);
 	}
@@ -368,7 +368,7 @@ app.post('/delete_clothes', function(req, res) {
 //load view closet page
 app.get('/mark_worn', function(req, res) {
 	//query to get all clothes form item table
-	var get_clothes = "SELECT * FROM item WHERE closet_id = " + current_closet_id + ";";
+	var get_clothes = "SELECT * FROM item WHERE closet_id = " + current_closet_id + " AND worn = false;";
 
 	//execute query
 	connection.query(get_clothes, (err, result) => {
@@ -417,7 +417,7 @@ app.post('/mark_worn', function(req, res) {
 	}
 
 	//render page
-	res.redirect('view_closet');
+	res.redirect('mark_worn');
 
 });
 
