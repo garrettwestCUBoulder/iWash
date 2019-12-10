@@ -332,7 +332,7 @@ app.post('/delete_clothes', function(req, res) {
 	var delete_selections = req.body.delete;
 
 	//query to delete all user selected items
-	var delete_clothes = "DELETE FROM item WHERE ";
+	var delete_clothes = "SET FOREIGN_KEY_CHECKS=0; DELETE FROM item WHERE ";
 	var i;
 
 	if (delete_selections != undefined) {
@@ -352,7 +352,7 @@ app.post('/delete_clothes', function(req, res) {
 			delete_clothes += where;
 			delete_clothes += " ";
 		}
-		delete_clothes += ";";
+		delete_clothes += "; SET FOREIGN_KEY_CHECKS=1;";
 
 		//only execute query if user has made at least one selection
 		connection.query(delete_clothes);
